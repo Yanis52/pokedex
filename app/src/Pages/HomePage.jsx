@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { PokemonContext } from "../Context/PokemonProvider";
 
 const HomePage = () => {
-  const pokemonContext = useContext(PokemonContext);
+  const { allPokemons } = useContext(PokemonContext);
 
-  console.log(pokemonContext);
+  console.log("HomePage context", allPokemons);
 
   return <div>Salut les amis</div>;
 };

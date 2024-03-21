@@ -1,21 +1,13 @@
-<<<<<<< Updated upstream
-import PokemonProvider from "./Context/PokemonProvider";
-=======
 import SearchBar from "./Component/Searchbar/SearchBar";
->>>>>>> Stashed changes
+import PokemonProvider from "./Context/PokemonProvider";
 import HomePage from "./Pages/HomePage";
 function App() {
-  console.log("salut");
   return (
     <>
-<<<<<<< Updated upstream
       <PokemonProvider>
         <HomePage />
+        <SearchBar />
       </PokemonProvider>
-=======
-      <HomePage />
-      <SearchBar></SearchBar>
->>>>>>> Stashed changes
     </>
   );
 }
