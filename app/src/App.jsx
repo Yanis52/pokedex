@@ -1,9 +1,12 @@
+import PokemonProvider from "./Context/PokemonProvider";
 import HomePage from "./Pages/HomePage";
-
 function App() {
+  console.log("salut");
   return (
     <>
-      <HomePage />
+      <PokemonProvider>
+        <HomePage />
+      </PokemonProvider>
     </>
   );
 }
