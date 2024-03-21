@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { getAllPokemons } from "../api_service/fetch_api";
-const HomePage = async () => {
+const HomePage = () => {
   const [userData, setUserData] = useState(null);
-  const data = await getAllPokemons();
 
   useEffect(() => {
-    setUserData(data);
-  }, [data]);
+    const getData = async () => {
+      const data = await getAllPokemons();
+      setUserData(data);
+    };
+    getData;
+  });
 
   console.log("HomePage ===>", userData);
 
