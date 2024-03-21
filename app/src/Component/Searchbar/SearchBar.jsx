@@ -23,6 +23,7 @@ function SearchBar() {
 
   return (
     <div>
+      <p>coucou</p>
       <input
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
