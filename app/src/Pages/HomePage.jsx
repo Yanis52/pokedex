@@ -8,8 +8,8 @@ const HomePage = () => {
       const data = await getAllPokemons();
       setUserData(data);
     };
-    getData;
-  });
+    getData();
+  }, []);
 
   console.log("HomePage ===>", userData);
 
