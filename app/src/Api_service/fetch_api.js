@@ -11,14 +11,3 @@ export async function getAllPokemons() {
   }
 }
 
-/* async function getOnePokemons() {
-  try {
-    const request = await fetch("getAllPokemons");
-    const data = await request.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-    return error;
-  }
-}
- */
