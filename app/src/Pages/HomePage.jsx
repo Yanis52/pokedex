@@ -1,19 +1,12 @@
-import { useEffect, useState } from "react";
-import { getAllPokemons } from "../api_service/fetch_api";
+import { useContext } from "react";
+import { PokemonContext } from "../Context/PokemonProvider";
+
 const HomePage = () => {
-  const [userData, setUserData] = useState(null);
+  const pokemonContext = useContext(PokemonContext);
 
-  useEffect(() => {
-    const getData = async () => {
-      const data = await getAllPokemons();
-      setUserData(data);
-    };
-    getData();
-  }, []);
+  console.log(pokemonContext);
 
-  console.log("HomePage ===>", userData);
-
-  return <div></div>;
+  return <div>Salut les amis</div>;
 };
 
 export default HomePage;
