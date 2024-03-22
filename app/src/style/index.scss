@@ -5,7 +5,7 @@
 @import '../Component/Header/Header.scss';
 
 
-body {
+body, #root{
   background-color: #20232a; 
- 
+  width: 100%;
 }
