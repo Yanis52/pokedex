@@ -1,12 +1,23 @@
-import { useContext } from "react";
-import { PokemonContext } from "../Context/PokemonProvider";
-
+import { useEffect, useState } from "react";
+import SearchBar from "../Component/Searchbar/SearchBar";
+import { getAllPokemons } from "../api_service/fetch_api";
 const HomePage = () => {
-  const { allPokemons } = useContext(PokemonContext);
+  const [pokemons, setPokemon] = useState();
 
-  console.log("HomePage context", allPokemons);
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getAllPokemons();
+      setPokemon(data);
+    };
+    getData();
+  }, []);
 
-  return <div>Salut les amis</div>;
+  return (
+    <div>
+      Salut les amis
+      <SearchBar pokemons={pokemons} />
+    </div>
+  );
 };
 
 export default HomePage;

@@ -1,25 +1,22 @@
-import { useContext, useEffect, useState } from "react";
-import { PokemonContext } from "../../Context/PokemonProvider";
-/* import Grid from "../Grid/Grid"; */
+import { useEffect, useState } from "react";
+import Grid from "../Grid/Grid";
 
-function SearchBar() {
+function SearchBar(pokemons) {
   // add search functionality
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const { allPokemons } = useContext(PokemonContext);
-  const data = allPokemons;
+  const data = pokemons.pokemons;
+  console.log(data);
 
   useEffect(() => {
     if (data) {
-      const results = data.results.filter((pokemon) => {
+      const results = data.filter((pokemon) => {
         return pokemon.name.toLowerCase().includes(searchTerm.toLowerCase());
       });
       setSearchResults(results);
     }
   }, [searchTerm, data]);
-
-  console.log("results", searchResults);
 
   return (
     <div>
@@ -30,7 +27,7 @@ function SearchBar() {
         placeholder="Search..."
       />
 
-      {/*     <Grid props={searchResults}/> */}
+      <Grid searchResults={searchResults} />
     </div>
   );
 }
