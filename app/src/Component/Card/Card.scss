@@ -1,0 +1,42 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 250px;
+  border-radius: 10px;
+  display: inline-block;
+  background-color: #fff;
+  margin: 10px;
+
+  img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card-body {
+    padding: 2px 16px;
+  }
+
+  h1 {
+    font-size: 18px;
+    color: #333;
+  }
+
+  .cardTypes {
+    background-color: #bd0e34fd;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .cardNumber {
+    text-align: center;
+    font-weight: bold;
+    background-color: #0ebd57fd;
+    color: #666;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+
+  }
+}

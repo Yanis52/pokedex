@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../Component/Searchbar/SearchBar";
 import { getAllPokemons } from "../api_service/fetch_api";
+
 const HomePage = () => {
   const [pokemons, setPokemon] = useState();
 
@@ -14,7 +15,6 @@ const HomePage = () => {
 
   return (
     <div>
-      Salut les amis
       <SearchBar pokemons={pokemons} />
     </div>
   );

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import ButtonAdd from "../Button/button";
+import Button from "../Button/button.jsx";
 const Card = (pokemon) => {
   const pokemonData = pokemon.pokemon;
+  const pokedexIsActive = pokemon.isPokedex;
+  console.log("card ", pokedexIsActive);
   const [onePokemon, setOnePokemon] = useState();
 
   useEffect(() => {
@@ -18,35 +20,45 @@ const Card = (pokemon) => {
   }, [pokemonData]);
 
   return (
-    <div>
-      <img
-        src={onePokemon && onePokemon.sprites.back_default}
-        alt="Description de l'image"
-      />
+    <div className="card">
+      <div className="card-body">
+        <img
+          src={onePokemon && onePokemon.sprites.back_default}
+          alt="Description de l'image"
+        />
 
-      <h1>{onePokemon && onePokemon.name}</h1>
+        <h1>{onePokemon && onePokemon.name}</h1>
 
-      {onePokemon &&
-        onePokemon.types.map((type, index) => {
-          return (
-            <p key={index} className="cardTypes">
-              {" "}
-              types : {type.type.name}
-            </p>
-          );
-        })}
+        {onePokemon && (
+          <p className="cardTypes">
+            types : {onePokemon.types.map((type) => type.type.name).join(", ")}
+          </p>
+        )}
 
-      <p className="cardNumber"> id : {onePokemon && onePokemon.id} </p>
+        {/*  {onePokemon &&
+          onePokemon.types.map((type, index) => {
+            return (
+              <p key={index} className="cardTypes">
+                {" "}
+                types : {type.type.name}
+              </p>
+            );
+          })} */}
 
-      <ButtonAdd
+        <p className="cardNumber"> id : {onePokemon && onePokemon.id} </p>
+      </div>
+
+      <Button
         pokemonData={
           onePokemon && {
             id: onePokemon.id,
             name: onePokemon.name,
             types: onePokemon.types,
             img: onePokemon.sprites.back_default,
+            url: pokemonData.url,
           }
         }
+        isPokedex={pokedexIsActive}
       />
     </div>
   );

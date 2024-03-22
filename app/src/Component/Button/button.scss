@@ -1,0 +1,34 @@
+.button-container {
+  display: flex;
+  gap: 5px; // Espace entre les boutons
+  justify-content: space-around; // Centre les boutons horizontalement
+  padding: 20px;
+}
+
+.button {
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; // Bordures arrondies pour un look moderne
+  background-image: linear-gradient(to right, #007bff, #00dbde); // Gradient de couleur
+  color: white; // Texte blanc pour contraste
+  font-weight: bold;
+  text-transform: uppercase; // Texte en majuscules
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 50%;
+  text-align: center;
+  &:hover {
+    transform: scale(1.05); // Légèrement plus grand au survol
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Ombre pour un effet de profondeur
+  }
+
+  &:active {
+    transform: scale(0.95); // Rétrécit légèrement lors du clic
+  }
+
+  &.delete {
+    background-image: linear-gradient(to right, #ff416c, #ff4b2b); 
+    text-align: center;// Gradient rouge pour les actions de suppression
+    width: 100px;
+  }
+}

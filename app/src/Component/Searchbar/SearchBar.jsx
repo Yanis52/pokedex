@@ -7,7 +7,6 @@ function SearchBar(pokemons) {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const data = pokemons.pokemons;
-  console.log(data);
 
   useEffect(() => {
     if (data) {
@@ -19,8 +18,9 @@ function SearchBar(pokemons) {
   }, [searchTerm, data]);
 
   return (
-    <div>
+    <div className="search_container">
       <input
+        className="search"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         type="text"
