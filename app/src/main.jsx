@@ -6,6 +6,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import App from "./App.jsx";
+import ErrorPage from "./Component/ErrorPage/ErrorPage.jsx";
 import HomePage from "./Pages/HomePage.jsx";
 import Pokedex from "./Pages/Pokedex.jsx";
 import "./index.css";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "Homepage",
         element: <HomePage />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
       },
     ],
   },

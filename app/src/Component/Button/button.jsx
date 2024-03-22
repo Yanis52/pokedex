@@ -8,8 +8,13 @@ const Button = (pokemonData) => {
   const context = useOutletContext();
 
   const handleClickAdd = () => {
-    localStorage.setItem(`pokemon_id${pokemonInfo.id}`, pokemonInfoJson);
-    context.updateData();
+    try {
+      localStorage.setItem(`pokemon_id${pokemonInfo.id}`, pokemonInfoJson);
+      context.updateData();
+    } catch (error) {
+      console.log("error");
+      return error;
+    }
   };
 
   const handleClickDelete = () => {
